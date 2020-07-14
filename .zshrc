@@ -1,9 +1,13 @@
-# プロンプト記号はシンプルにした
-PROMPT='$ '
+# AWS Profile が指定されている時のみ表示
+if [ -z "$AWS_PROFILE" ]; then
+ PROMPT='$ '
+else
+ PROMPT='$AWS_PROFILE $ '
+fi
 
 # KCODEにUTF-8を設定
 export LANG=ja_JP.UTF-8
-export KCODE=u           
+export KCODE=u
 
 ## 色を使用出来るようにする
 autoload -Uz colors
@@ -33,9 +37,9 @@ alias fork='open -a /Applications/Fork.app/ .'
 alias cat=bat
 alias ls='exa -l'
 alias lzd='lazydocker'
+alias awsp="source _awsp ; source ~/.zshrc"
 
-# pecoの設定
-# cortrol+rで呼び出し
+# pecoの設定(cortrol+rで呼び出し)
 function peco-history-selection() {
     BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
@@ -77,4 +81,10 @@ source <(kubectl completion zsh)
 # kube-ps1
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
+
+# Terraform
+# export TF_CLI_ARGS_plan="--parallelism=30"
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
