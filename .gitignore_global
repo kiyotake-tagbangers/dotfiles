@@ -1,0 +1,64 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# vscode
+.vscode/
+.factorypath
+server/.factorypath
+server/.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+
+
+# Java
+*.class
+*.jar
+*.war
+
+# IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# Gradle
+.gradle
+build
+/build
+
+# Maven
+target
+
+# Build
+out
+build
+bin
+
+#npm
+node_modules
+npm-debug.log
+
+# jspm
+jspm_packages/
+
+#sass
+.sass-cache
+
+# Other
+*.log
+*.swp
+*.bak
+*.envrc
+*.env
+
+# fork
+default.profraw
+
+# credential
+*.pem
