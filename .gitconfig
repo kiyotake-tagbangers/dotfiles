@@ -1,0 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = 
+	email = 
+
+
+[url "git@github.com:"]
+    insteadOf = "https://github.com/"
+
+[core]
+	excludesfile = /Users/kiyota/.gitignore_global
+[merge]
+        # always create commit(--no-ff) even when it's Fast-forward
+	ff = false
+[pull]
+        # not create commit when Fast-Forward
+	ff = only
