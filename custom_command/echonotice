@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# iterm2 にてコマンド終了時に通知するためのコマンド
+# usage:
+# $ command ; echonotice
+
+# example:
+# $ terraform apply -auto-approve ; echonotice
+
+MSG="$@"
+echo -ne '\033]9;' $MSG '\a'
+echo $MSG
