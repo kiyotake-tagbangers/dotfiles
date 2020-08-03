@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# 第1引数に指定した .mov ファイルを .gif に変換するためのコマンド
+# usage:
+# $ giffy sample
+
+# require:
+# ffmpeg -> https://ffmpeg.org/
+
+ffmpeg -i ~/screen_capture/$1.mov -filter_complex "[0:v] fps=20,scale=900:-2,split [a][b];[a] palettegen [p];[b][p] paletteuse" ~/screen_capture/$1.gif && rm ~/screen_capture/$1.mov
